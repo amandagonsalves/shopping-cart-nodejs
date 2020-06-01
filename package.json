@@ -1,0 +1,22 @@
+{
+  "name": "carrinho-de-compras-nodejs",
+  "version": "1.0.0",
+  "description": "exercicio de carrinho de compras com nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amandagonsalves/carrinho-de-compras-nodejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amandagonsalves/carrinho-de-compras-nodejs/issues"
+  },
+  "homepage": "https://github.com/amandagonsalves/carrinho-de-compras-nodejs#readme",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
