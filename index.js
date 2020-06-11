@@ -14,26 +14,29 @@ function options() {
    =================================================================
 `)
 }
+function decoration() {
+    console.log('=====================================================');
+}
 function buyProducts() {
     let addProduct = prompt('Digite o nome do produto: ').toUpperCase();
     return products.filter((product) => {
         if(product.name === addProduct){
-            console.log('=====================================================');
+            decoration()
             console.log(product);
-            console.log('=====================================================');
+            decoration()
             let res = prompt(`Adicionar ${addProduct} ao carrinho? [ y/n ] `);
-            console.log('=====================================================');
+            decoration()
             if(res==='y') {
                 nProducts.push(product);
                 console.log('Produto adicionado ao carrinho.');
-                console.log('=====================================================');
+                decoration()
             } else {
                 console.log('Produto não adicionado ao carrinho.');
-                console.log('=====================================================');
+                decoration()
             }
             console.log('Por enquanto, assim está seu carrinho: ');
             console.log(nProducts)
-            console.log('=====================================================');
+            decoration()
         } else {
             console.log('Produto não encontrado.')
         }
@@ -45,14 +48,14 @@ function optionSelected(option) {
     if(option=='1') {
 
         //pesquisar produto
-        console.log('=====================================================');
+        decoration()
         let searchProduct = prompt('Digite o nome do produto: ').toUpperCase();
-        console.log('=====================================================');
+        decoration()
         return products.filter((product) => {
             if(product.name === searchProduct){
-                console.log('=====================================================');
+                decoration()
                 console.log(product)
-                console.log('=====================================================');
+                decoration()
             } else {
                 console.log('Produto não encontrado.')
             }
@@ -61,16 +64,16 @@ function optionSelected(option) {
     } else if (option == '2') {
 
         //adicionar produto ao carrinho
-        console.log('=====================================================');
+        decoration()
         buyProducts()
         let buy = prompt('Deseja adicionar mais algum no carrinho? [y/n] ');
         if(buy === 'y') {
             buyProducts()
             let buy = prompt('Deseja adicionar mais algum no carrinho? [y/n] ');
-            console.log('=====================================================');
+            decoration()
         } else {
             console.log('Produtos adicionados ao carrinho com sucesso.')
-            console.log('=====================================================');
+            decoration()
         }
         
     } else if (option == '3') {
@@ -86,6 +89,7 @@ function optionSelected(option) {
             FULL LOOK: Pelo menos 4 produtos da mesma categoria
         ======================================================================
         `)
+        nProducts.filter(product => {product.category === product})
 
     } else if (option == '4') {
 
