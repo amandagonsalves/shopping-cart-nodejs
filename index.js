@@ -1,6 +1,5 @@
 const {products} = require('./data/products.json');
 const prompt = require('prompt-sync')();
-const data = require('./data/products.json');
 
 function options() {
     console.log(`
@@ -11,7 +10,7 @@ function options() {
    |    4: Calcular o valor total com os descontos (caso existam)  |
    |    5: Calcular total de desconto                              |
    |    6: Calcular porcentagem de desconto                        |
-   |    7: Parar de comprar                                        |
+   |    7: Terminar compra                                        |
    =================================================================
 `)
 }
@@ -22,13 +21,29 @@ function optionSelected(option) {
     if(option=='1') {
 
         //pesquisar produto
-        //let searchProduct = prompt('Digite o nome do produto: ').toUpperCase();
+        let searchProduct = prompt('Digite o nome do produto: ').toUpperCase();
+        return products.filter((product) => {
+            if(product.name === searchProduct){
+                console.log(product)
+            }
+        })
 
     } else if (option == '2') {
 
         //adicionar produto ao carrinho
-        //let addProduct = prompt('Digite o nome do produto: ').toUpperCase();
-        //console.log(addProduct)
+        let addProduct = prompt('Digite o nome do produto: ').toUpperCase();return products.filter((product) => {
+            if(product.name === addProduct){
+                console.log(product)
+                let res = prompt('Adicionar o produto ao carrinho? [ y/n ] ');
+                if(res==='y') {
+                    nProducts.push(addProduct.value);
+                    console.log('Produto adicionado ao carrinho.')
+                    console.log(nProducts)
+                } else {
+                    console.log('Produto não adicionado ao carrinho.')
+                }
+            } 
+        })
 
     } else if (option == '3') {
 
