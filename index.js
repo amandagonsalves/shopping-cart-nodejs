@@ -14,9 +14,25 @@ function options() {
    =================================================================
 `)
 }
-
+function buyProducts() {
+    let addProduct = prompt('Digite o nome do produto: ').toUpperCase();return products.filter((product) => {
+        if(product.name === addProduct){
+            console.log(product);
+            let res = prompt(`Adicionar ${addProduct} ao carrinho? [ y/n ] `);
+            if(res==='y') {
+                nProducts.push(product);
+                console.log('Produto adicionado ao carrinho.');
+            } else {
+                console.log('Produto não adicionado ao carrinho.');
+            }
+            
+            console.log(nProducts)
+            
+        } 
+    })
+}
 function optionSelected(option) {
-    let nProducts = []
+    nProducts = []
 
     if(option=='1') {
 
@@ -31,20 +47,15 @@ function optionSelected(option) {
     } else if (option == '2') {
 
         //adicionar produto ao carrinho
-        let addProduct = prompt('Digite o nome do produto: ').toUpperCase();return products.filter((product) => {
-            if(product.name === addProduct){
-                console.log(product)
-                let res = prompt('Adicionar o produto ao carrinho? [ y/n ] ');
-                if(res==='y') {
-                    nProducts.push(addProduct.value);
-                    console.log('Produto adicionado ao carrinho.')
-                    console.log(nProducts)
-                } else {
-                    console.log('Produto não adicionado ao carrinho.')
-                }
-            } 
-        })
-
+        buyProducts()
+        let buy = prompt('Deseja adicionar mais algum no carrinho? [y/n] ');
+        if(buy === 'y') {
+            buyProducts()
+            let buy = prompt('Deseja adicionar mais algum no carrinho? [y/n] ');
+        } else {
+            console.log('Produtos adicionados ao carrinho com sucesso.')
+        }
+        
     } else if (option == '3') {
 
         //analisar as promoções
