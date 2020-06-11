@@ -11,16 +11,29 @@ function returnProducts() {
    |    4: Calcular o valor total com os descontos (caso existam)  |
    |    5: Calcular total de desconto                              |
    |    6: Calcular porcentagem de desconto                        |
+   |    7: Parar de comprar                                        |
    =================================================================
     `)
+    let nProducts = []
     let option = prompt('Digite a opção: ');
     if(option=='1') {
-        let searchProduct = prompt('Digite o nome do produto: ');
-        if(searchProduct === data.name ) {
-            return data.name
+        let searchProduct = prompt('Digite o nome do produto: ').toUpperCase();
+        if(searchProduct == products.name ) {
+            return products
+        }
+    } else if (option == '2') {
+        let addProduct = prompt('Digite o nome do produto: ').toUpperCase();
+        if(addProduct === products.name) {
+            console.log(products)
+            let res = prompt('Adicionar ao carrinho? [Y/N]');
+            if(res == 'Y' || 'y') {
+                nProducts.push(addProduct.value)
+            } else {
+                
+            }
+            
         }
     }
     
 }
 returnProducts()
-//console.log(data.products.name)
