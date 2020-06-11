@@ -18,13 +18,12 @@ function returnProducts() {
     let option = prompt('Digite a opção: ');
     if(option=='1') {
         let searchProduct = prompt('Digite o nome do produto: ').toUpperCase();
-        if(searchProduct == products.name ) {
-            return products
-        }
+        const filtro = products.filter(searchProduct => { products.name === searchProduct})
+        console.log(filtro)
     } else if (option == '2') {
         let addProduct = prompt('Digite o nome do produto: ').toUpperCase();
         if(addProduct === products.name) {
-            console.log(products)
+            console.log(data)
             let res = prompt('Adicionar ao carrinho? [Y/N]');
             if(res == 'Y' || 'y') {
                 nProducts.push(addProduct.value)
@@ -36,4 +35,5 @@ function returnProducts() {
     }
     
 }
+
 returnProducts()
