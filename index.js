@@ -1,15 +1,26 @@
 const {products} = require('./data/products.json');
 const prompt = require('prompt-sync')();
-let nProdutos = prompt('Olá, quantos produtos são? ');
-var ids = []
-let i;
-for(i=0; i<nProdutos; i++) {
-    var id = Number(prompt('Digite o id do produto: '))
+const data = require('./data/products.json');
+
+function returnProducts() {
+    console.log(`
+   =================================================================
+   |    1: Pesquisar produto                                       |
+   |    2: Adicionar novo produto ao carrinho                      |
+   |    3: Analisar promocão dos produtos                          |
+   |    4: Calcular o valor total com os descontos (caso existam)  |
+   |    5: Calcular total de desconto                              |
+   |    6: Calcular porcentagem de desconto                        |
+   =================================================================
+    `)
+    let option = prompt('Digite a opção: ');
+    if(option=='1') {
+        let searchProduct = prompt('Digite o nome do produto: ');
+        if(searchProduct === data.name ) {
+            return data.name
+        }
+    }
+    
 }
-var array = ids.push(id.value);
-console.log(array[id])
-let filterProductsById = products.filter(produto => produto.id);
-//console.log(filterProductsById);
-//if(id!=filterProductsById) {
-    //prompt('digite outro');
-//}
+returnProducts()
+//console.log(data.products.name)
