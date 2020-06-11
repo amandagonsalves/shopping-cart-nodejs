@@ -89,7 +89,10 @@ function optionSelected(option) {
             FULL LOOK: Pelo menos 4 produtos da mesma categoria
         ======================================================================
         `)
-        nProducts.filter(product => {product.category === product})
+        nProducts.filter(product => {product.category === 'PANTS'})
+        nProducts.filter(product => {product.category === 'T-SHIRTS'})
+        nProducts.filter(product => {product.category === 'SHOES'})
+        nProducts.filter(product => {product.category === 'BAGS'})
 
     } else if (option == '4') {
 
