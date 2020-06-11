@@ -15,20 +15,28 @@ function options() {
 `)
 }
 function buyProducts() {
-    let addProduct = prompt('Digite o nome do produto: ').toUpperCase();return products.filter((product) => {
+    let addProduct = prompt('Digite o nome do produto: ').toUpperCase();
+    return products.filter((product) => {
         if(product.name === addProduct){
+            console.log('=====================================================');
             console.log(product);
+            console.log('=====================================================');
             let res = prompt(`Adicionar ${addProduct} ao carrinho? [ y/n ] `);
+            console.log('=====================================================');
             if(res==='y') {
                 nProducts.push(product);
                 console.log('Produto adicionado ao carrinho.');
+                console.log('=====================================================');
             } else {
                 console.log('Produto não adicionado ao carrinho.');
+                console.log('=====================================================');
             }
-            
+            console.log('Por enquanto, assim está seu carrinho: ');
             console.log(nProducts)
-            
-        } 
+            console.log('=====================================================');
+        } else {
+            console.log('Produto não encontrado.')
+        }
     })
 }
 function optionSelected(option) {
@@ -37,23 +45,32 @@ function optionSelected(option) {
     if(option=='1') {
 
         //pesquisar produto
+        console.log('=====================================================');
         let searchProduct = prompt('Digite o nome do produto: ').toUpperCase();
+        console.log('=====================================================');
         return products.filter((product) => {
             if(product.name === searchProduct){
+                console.log('=====================================================');
                 console.log(product)
+                console.log('=====================================================');
+            } else {
+                console.log('Produto não encontrado.')
             }
         })
 
     } else if (option == '2') {
 
         //adicionar produto ao carrinho
+        console.log('=====================================================');
         buyProducts()
         let buy = prompt('Deseja adicionar mais algum no carrinho? [y/n] ');
         if(buy === 'y') {
             buyProducts()
             let buy = prompt('Deseja adicionar mais algum no carrinho? [y/n] ');
+            console.log('=====================================================');
         } else {
             console.log('Produtos adicionados ao carrinho com sucesso.')
+            console.log('=====================================================');
         }
         
     } else if (option == '3') {
