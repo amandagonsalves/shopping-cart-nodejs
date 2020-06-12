@@ -38,6 +38,7 @@ function buyProducts() {
             decoration()
         } 
     })
+    
 } 
 
 function promotionsLook() {
@@ -98,9 +99,11 @@ function optionSelected(option) {
         decoration()
         buyProducts()
         let buy = prompt('Deseja adicionar mais algum no carrinho? [y/n] ');
+        decoration()
         while(buy === 'y') {
+            let buy = prompt('Deseja adicionar mais algum no carrinho? [y/n] ');
             buyProducts()
-            prompt('Deseja adicionar mais algum no carrinho? [y/n] ');
+            
         }
         if(buy != 'y') {
             
@@ -108,14 +111,14 @@ function optionSelected(option) {
             options();
             decoration()
         }
-        /*if(buy === 'y') {
+        if(buy === 'y') {
             buyProducts()
             let buy = prompt('Deseja adicionar mais algum no carrinho? [y/n] ');
             decoration()
         } else {
             console.log('Produtos adicionados ao carrinho com sucesso.')
             decoration()
-        }*/
+        }
         promotionsLook()
         
     } else if (option == '3') {
@@ -143,4 +146,5 @@ while (option != "6") {
     option = prompt('Sua opção: ');
     const resultado = optionSelected(option);
     console.log(resultado)
+    
 }
