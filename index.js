@@ -33,12 +33,14 @@ function buyProducts() {
                 console.log('Produto não adicionado ao carrinho.');
                 decoration()
             }
+            let total = nProducts.length
             console.log('Por enquanto, assim está seu carrinho: ');
             console.log(nProducts)
             decoration()
         } 
     })
-}
+} 
+
 function promotionsLook() {
     console.log(`
         ======================================================================
@@ -52,10 +54,10 @@ function promotionsLook() {
     `)
     
     return nProducts.filter(product => {
-        
-        if(product.category === 'PANTS') {
+        let pants = product.category === 'PANTS'
+        if(pants.length>4) {
            
-            console.log('pants:')
+            console.log('full look')
             console.log(product.promotions)
 
         } else if(product.category === 'T-SHIRTS') {
@@ -76,7 +78,7 @@ function promotionsLook() {
 }
 function optionSelected(option) {
     nProducts = []
-
+    
     if(option=='1') {
 
         //pesquisar produto e mostrar promoções
@@ -133,4 +135,3 @@ while (option != "6") {
     const resultado = optionSelected(option);
     console.log(resultado)
 }
-//returnProducts()
