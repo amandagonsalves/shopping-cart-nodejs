@@ -27,7 +27,7 @@ function buyProducts() {
             let res = prompt(`Adicionar ${addProduct} ao carrinho? [ y/n ] `);
             decoration()
             if(res==='y') {
-                nProducts.push(product);
+                var allProducts = nProducts.push(product);
                 console.log('Produto adicionado ao carrinho.');
                 decoration()
             } else {
@@ -37,9 +37,7 @@ function buyProducts() {
             console.log('Por enquanto, assim está seu carrinho: ');
             console.log(nProducts)
             decoration()
-        } else {
-            console.log('Produto não encontrado.')
-        }
+        } 
     })
 }
 function optionSelected(option) {
@@ -56,8 +54,6 @@ function optionSelected(option) {
                 decoration()
                 console.log(product)
                 decoration()
-            } else {
-                console.log('Produto não encontrado.')
             }
         })
 
@@ -89,10 +85,11 @@ function optionSelected(option) {
             FULL LOOK: Pelo menos 4 produtos da mesma categoria
         ======================================================================
         `)
-        nProducts.filter(product => {product.category === 'PANTS'})
-        nProducts.filter(product => {product.category === 'T-SHIRTS'})
-        nProducts.filter(product => {product.category === 'SHOES'})
-        nProducts.filter(product => {product.category === 'BAGS'})
+        return allProducts.filter(product => {
+            if(product.category === 'PANTS') {
+                console.log('categ pants')
+            }
+        })
 
     } else if (option == '4') {
 
