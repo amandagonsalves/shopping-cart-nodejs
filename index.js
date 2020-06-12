@@ -33,7 +33,6 @@ function buyProducts() {
                 console.log('Produto não adicionado ao carrinho.');
                 decoration()
             }
-            let total = nProducts.length
             console.log('Por enquanto, assim está seu carrinho: ');
             console.log(nProducts)
             decoration()
@@ -58,7 +57,7 @@ function promotionsLook() {
         if(pants.length>4) {
            
             console.log('full look')
-            console.log(product.promotions)
+            console.log(product.promotions )
 
         } else if(product.category === 'T-SHIRTS') {
             
@@ -99,14 +98,24 @@ function optionSelected(option) {
         decoration()
         buyProducts()
         let buy = prompt('Deseja adicionar mais algum no carrinho? [y/n] ');
-        if(buy === 'y') {
+        while(buy === 'y') {
+            buyProducts()
+            prompt('Deseja adicionar mais algum no carrinho? [y/n] ');
+        }
+        if(buy != 'y') {
+            
+            console.log('Concluído.');
+            options();
+            decoration()
+        }
+        /*if(buy === 'y') {
             buyProducts()
             let buy = prompt('Deseja adicionar mais algum no carrinho? [y/n] ');
             decoration()
         } else {
             console.log('Produtos adicionados ao carrinho com sucesso.')
             decoration()
-        }
+        }*/
         promotionsLook()
         
     } else if (option == '3') {
