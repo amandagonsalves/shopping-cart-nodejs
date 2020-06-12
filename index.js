@@ -50,19 +50,27 @@ function promotionsLook() {
             FULL LOOK: Pelo menos 4 produtos da mesma categoria
         ======================================================================
     `)
+    
     return nProducts.filter(product => {
+        
         if(product.category === 'PANTS') {
+           
+            console.log('pants:')
             console.log(product.promotions)
-            console.log('pants')
+
         } else if(product.category === 'T-SHIRTS') {
+            
+            console.log('t-shirts:')
             console.log(product.promotions)
-            console.log('t-shirts')
+
         } else if(product.category === 'BAGS') {
+            
+            console.log('bags:')
             console.log(product.promotions)
-            console.log('bags')
         } else if(product.category === 'SHOES') {
+            
+            console.log('shoes:')
             console.log(product.promotions)
-            console.log('shoes')
         }
     })
 }
