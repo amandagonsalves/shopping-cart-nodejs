@@ -3,15 +3,14 @@ const prompt = require('prompt-sync')();
 
 function options() {
     console.log(`
-   =================================================================
-   |    1: Pesquisar produto                                       |
-   |    2: Adicionar novo produto ao carrinho                      |
-   |    3: Analisar promocão dos produtos                          |
-   |    4: Calcular o valor total com os descontos (caso existam)  |
-   |    5: Calcular total de desconto                              |
-   |    6: Calcular porcentagem de desconto                        |
-   |    7: Terminar compra                                        |
-   =================================================================
+   =============================================================================
+   |    1: Pesquisar produto                                                   |
+   |    2: Adicionar novo produto ao carrinho e analisar promocão dos produtos |
+   |    3: Calcular o valor total com os descontos (caso existam)              |
+   |    4: Calcular total de desconto                                          |
+   |    5: Calcular porcentagem de desconto                                    |
+   |    6: Terminar compra                                                     |
+   =============================================================================
 `)
 }
 function decoration() {
@@ -27,7 +26,7 @@ function buyProducts() {
             let res = prompt(`Adicionar ${addProduct} ao carrinho? [ y/n ] `);
             decoration()
             if(res==='y') {
-                var allProducts = nProducts.push(product);
+                nProducts.push(product);
                 console.log('Produto adicionado ao carrinho.');
                 decoration()
             } else {
@@ -40,12 +39,39 @@ function buyProducts() {
         } 
     })
 }
+function promotionsLook() {
+    console.log(`
+        ======================================================================
+                                PROMOÇÕES DISPONÍVEIS
+        ======================================================================
+            SINGLE LOOK: Todos os produtos do carrinho com a mesma categoria
+            DOUBLE LOOK: Pelo menos 2 produtos de categorias diferentes
+            TRIPLE LOOK: Pelo menos 2 produtos de categorias diferentes
+            FULL LOOK: Pelo menos 4 produtos da mesma categoria
+        ======================================================================
+    `)
+    return nProducts.filter(product => {
+        if(product.category === 'PANTS') {
+            console.log(product.promotions)
+            console.log('pants')
+        } else if(product.category === 'T-SHIRTS') {
+            console.log(product.promotions)
+            console.log('t-shirts')
+        } else if(product.category === 'BAGS') {
+            console.log(product.promotions)
+            console.log('bags')
+        } else if(product.category === 'SHOES') {
+            console.log(product.promotions)
+            console.log('shoes')
+        }
+    })
+}
 function optionSelected(option) {
     nProducts = []
 
     if(option=='1') {
 
-        //pesquisar produto
+        //pesquisar produto e mostrar promoções
         decoration()
         let searchProduct = prompt('Digite o nome do produto: ').toUpperCase();
         decoration()
@@ -71,39 +97,21 @@ function optionSelected(option) {
             console.log('Produtos adicionados ao carrinho com sucesso.')
             decoration()
         }
+        promotionsLook()
         
     } else if (option == '3') {
 
-        //analisar as promoções
-        console.log(`
-        ======================================================================
-                                PROMOÇÕES DISPONÍVEIS
-        ======================================================================
-            SINGLE LOOK: Todos os produtos do carrinho com a mesma categoria
-            DOUBLE LOOK: Pelo menos 2 produtos de categorias diferentes
-            TRIPLE LOOK: Pelo menos 2 produtos de categorias diferentes
-            FULL LOOK: Pelo menos 4 produtos da mesma categoria
-        ======================================================================
-        `)
-        return allProducts.filter(product => {
-            if(product.category === 'PANTS') {
-                console.log('categ pants')
-            }
-        })
+        //calcular o valor total com desconto
 
     } else if (option == '4') {
 
-        //calcular o valor total com desconto
+        //calcular total de desconto
 
     } else if (option == '5') {
 
-        //calcular total de desconto
-
-    } else if (option == '6') {
-
         //Calcular porcentagem de desconto
 
-    } else if (option == '7') {
+    } else if (option == '6') {
 
         console.log('Compra terminada.')
 
@@ -111,7 +119,7 @@ function optionSelected(option) {
     
 }
 let option;
-while (option != "7") {
+while (option != "6") {
     options();
     option = prompt('Sua opção: ');
     const resultado = optionSelected(option);
