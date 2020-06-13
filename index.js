@@ -13,9 +13,11 @@ function options() {
    =============================================================================
 `)
 }
+
 function decoration() {
     console.log('=====================================================');
 }
+
 function buyProducts() {
     
     var addProduct = prompt('Digite o nome do produto: ').toUpperCase();
@@ -60,8 +62,8 @@ function promotionsLook() {
             FULL LOOK: Pelo menos 4 produtos da mesma categoria
         ======================================================================
     `)
-    
 }
+
 function optionSelected(option) {
     nProducts = []
     
@@ -71,6 +73,7 @@ function optionSelected(option) {
         decoration()
         let searchProduct = prompt('Digite o nome do produto: ').toUpperCase();
         decoration()
+
         return products.filter((product) => {
             if(product.name === searchProduct){
                 decoration()
@@ -104,11 +107,11 @@ function optionSelected(option) {
     }
     
 }
+
 let option;
 while (option != "6") {
     options();
     option = prompt('Sua opção: ');
     const resultado = optionSelected(option);
     console.log(resultado)
-    
 }
