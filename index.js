@@ -60,35 +60,7 @@ function promotionsLook() {
             FULL LOOK: Pelo menos 4 produtos da mesma categoria
         ======================================================================
     `)
-    /*product => {
-        if(product.category === 'PANTS') {
-           
-            console.log('pants: ')
-            console.log(product.promotions )
-
-        } else if(product.category === 'T-SHIRTS') {
-            
-            console.log('t-shirts:')
-            console.log(product.promotions)
-
-        } else if(product.category === 'BAGS') {
-            
-            console.log('bags:')
-            console.log(product.promotions)
-        } else if(product.category === 'SHOES') {
-            
-            console.log('shoes:')
-            console.log(product.promotions)
-        }
-    }*/
-    var total = nProducts.reduce((initialValue, product,indice,original) => {
-        console.log(`${initialValue} ate o momento`);
-        console.log(`${numero} valor atual`);
-        console.log(`${indice} indice atual`);
-        console.log(`${original} array original`);
-        return initialValue+product
-    },0)
-    console.log(total)
+    
 }
 function optionSelected(option) {
     nProducts = []
@@ -111,7 +83,7 @@ function optionSelected(option) {
 
         //adicionar produto ao carrinho
         buyProducts()
-        
+        promotionsLook()
         
     } else if (option == '3') {
 
