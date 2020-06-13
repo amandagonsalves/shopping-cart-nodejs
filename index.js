@@ -17,7 +17,9 @@ function decoration() {
     console.log('=====================================================');
 }
 function buyProducts() {
-    let addProduct = prompt('Digite o nome do produto: ').toUpperCase();
+    
+    var addProduct = prompt('Digite o nome do produto: ').toUpperCase();
+    
     return products.filter((product) => {
         if(product.name === addProduct){
             decoration()
@@ -36,6 +38,12 @@ function buyProducts() {
             console.log('Por enquanto, assim está seu carrinho: ');
             console.log(nProducts)
             decoration()
+            let buy = prompt('Deseja adicionar novo item? [y/n] ');
+            if (buy === 'y') {
+                buyProducts()
+            } else {
+                console.log('Concluído.')
+            }
         } 
     })
     
@@ -48,16 +56,14 @@ function promotionsLook() {
         ======================================================================
             SINGLE LOOK: Todos os produtos do carrinho com a mesma categoria
             DOUBLE LOOK: Pelo menos 2 produtos de categorias diferentes
-            TRIPLE LOOK: Pelo menos 2 produtos de categorias diferentes
+            TRIPLE LOOK: Pelo menos 3 produtos de categorias diferentes
             FULL LOOK: Pelo menos 4 produtos da mesma categoria
         ======================================================================
     `)
-    
-    return nProducts.filter(product => {
-        let pants = product.category === 'PANTS'
-        if(pants.length>4) {
+    /*product => {
+        if(product.category === 'PANTS') {
            
-            console.log('full look')
+            console.log('pants: ')
             console.log(product.promotions )
 
         } else if(product.category === 'T-SHIRTS') {
@@ -74,7 +80,15 @@ function promotionsLook() {
             console.log('shoes:')
             console.log(product.promotions)
         }
-    })
+    }*/
+    var total = nProducts.reduce((initialValue, product,indice,original) => {
+        console.log(`${initialValue} ate o momento`);
+        console.log(`${numero} valor atual`);
+        console.log(`${indice} indice atual`);
+        console.log(`${original} array original`);
+        return initialValue+product
+    },0)
+    console.log(total)
 }
 function optionSelected(option) {
     nProducts = []
@@ -96,30 +110,8 @@ function optionSelected(option) {
     } else if (option == '2') {
 
         //adicionar produto ao carrinho
-        decoration()
         buyProducts()
-        let buy = prompt('Deseja adicionar mais algum no carrinho? [y/n] ');
-        decoration()
-        while(buy === 'y') {
-            let buy = prompt('Deseja adicionar mais algum no carrinho? [y/n] ');
-            buyProducts()
-            
-        }
-        if(buy != 'y') {
-            
-            console.log('Concluído.');
-            options();
-            decoration()
-        }
-        if(buy === 'y') {
-            buyProducts()
-            let buy = prompt('Deseja adicionar mais algum no carrinho? [y/n] ');
-            decoration()
-        } else {
-            console.log('Produtos adicionados ao carrinho com sucesso.')
-            decoration()
-        }
-        promotionsLook()
+        
         
     } else if (option == '3') {
 
