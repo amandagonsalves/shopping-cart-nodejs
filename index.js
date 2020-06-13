@@ -62,6 +62,24 @@ function promotionsLook() {
             FULL LOOK: Pelo menos 4 produtos da mesma categoria
         ======================================================================
     `)
+    const {selected,categories} =
+    nProducts.reduce((data,{id}) => {
+        const productN = products.find(({id: productId}) => productId === id);
+        if(productN) {
+            data.categories.push(productN.category);
+            data.selected.push(productN);
+        }
+        return data;
+    },{
+        selected: [],
+        categories:[]
+    });
+    console.log({selected,categories});
+    //vai retornar os produtos selecionados e suas respectivas categorias
+    const isCartSingleLook = categories.indexOf(categories => 
+    categories.indexOf(category !== 0)
+    === -1);
+    console.log(isCartSingleLook);
 }
 
 function optionSelected(option) {
