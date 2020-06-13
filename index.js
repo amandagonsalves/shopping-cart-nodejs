@@ -76,9 +76,14 @@ function promotionsLook() {
     });
     console.log({selected,categories});
     //vai retornar os produtos selecionados e suas respectivas categorias
-    const isCartSingleLook = categories.indexOf(categories => 
-    categories.indexOf(category !== 0)
-    === -1);
+    const isCartSingleLook = categories
+  .indexOf(category => categories
+  .indexOf(category) !== 0) === -1;
+    if(isCartSingleLook === true) {
+        console.log('sao da mesma categoria');
+    } else {
+        console.log('nao sao da mesma categoria');
+    }
     console.log(isCartSingleLook);
 }
 

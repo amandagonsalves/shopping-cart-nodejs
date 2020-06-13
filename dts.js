@@ -67,6 +67,4 @@ const {products,} = require('./data/products.json');
    * Gave `const array = ['a', 'a', 'a'];`
    * If we check `array.indexOf('a')` it will always be 0, any other value would give a different index.
    */
-  const isCartSingleLook = categories
-  .indexOf(category => categories
-  .indexOf(category) !== 0) === -1;
+  const isCartSingleLook = categories.indexOf(category => categories.indexOf(category) !== 0) === -1;
