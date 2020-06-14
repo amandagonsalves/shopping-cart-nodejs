@@ -89,11 +89,7 @@ function promotionsLook() {
             console.log(product.promotions)
             decoration()
         });
-        nProducts.reduce((product, price)=> {
-            nProducts,forEach(product => {
-                product.price
-            })
-        }, 0)
+
     }
 
     const isDoubleLook = new Set(categories).size == 2;
