@@ -55,6 +55,10 @@
       "regularPrice": 149.99,
       "promotions": [
         {
+          "looks": ["SINGLE LOOK", "DOUBLE LOOK"],
+          "price": 139.99
+        },
+        {
           "looks": ["TRIPLE LOOK", "FULL LOOK"],
           "price": 129.99
         }
@@ -98,6 +102,10 @@
       "category": "T-SHIRTS",
       "regularPrice": 49.99,
       "promotions": [
+        {
+          "looks": ["SINGLE LOOK", "DOUBLE LOOK"],
+          "price": 139.99
+        },
         {
           "looks": ["TRIPLE LOOK", "FULL LOOK"],
           "price": 39.99
@@ -171,6 +179,10 @@
       "regularPrice": 79.99,
       "promotions": [
         {
+          "looks": ["SINGLE LOOK"],
+          "price": 139.99
+        },
+        {
           "looks": ["DOUBLE LOOK", "TRIPLE LOOK", "FULL LOOK"],
           "price": 59.99
         }
@@ -185,6 +197,10 @@
         {
           "looks": ["SINGLE LOOK", "DOUBLE LOOK"],
           "price": 49.99
+        },
+        {
+          "looks": ["TRIPLE LOOK", "FULL LOOK"],
+          "price": 39.99
         }
       ]
     },
@@ -195,8 +211,12 @@
       "regularPrice": 59.98,
       "promotions": [
         {
-          "looks": ["SINGLE LOOK"],
+          "looks": ["SINGLE LOOK", "DOUBLE LOOK"],
           "price": 59.98
+        },
+        {
+          "looks": ["TRIPLE LOOK", "FULL LOOK"],
+          "price": 49.99
         }
       ]
     },
@@ -351,7 +371,7 @@
           "price": 74.99
         },
         {
-          "looks": ["DOUBLE LOOK", "TRIPLE LOOK"],
+          "looks": ["DOUBLE LOOK", "TRIPLE LOOK", "FULL LOOK"],
           "price": 69.99
         }
       ]

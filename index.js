@@ -74,31 +74,58 @@ function promotionsLook() {
         selected: [],
         categories:[]
     });
-    console.log({selected,categories});
+    //console.log({selected,categories});
     //vai retornar os produtos selecionados e suas respectivas categorias
 
     const isSingleLook = new Set(categories).size == 1;
     if(isSingleLook) { 
+        decoration()
         console.log('Sua promoção é a SINGLE LOOK.')
+        decoration()
         nProducts.forEach(product => {
+            console.log(`Valores de ${product.name} de acordo com a promoção:`)
+            decoration()
             console.log(product.promotions)
+            decoration()
         });
-        
-
     }
 
     const isDoubleLook = new Set(categories).size == 2;
     if(isDoubleLook) {
-        console.log('double look');
+        decoration()
+        console.log('Sua promoção é a DOUBLE LOOK.')
+        decoration()
+        nProducts.forEach(product => {
+            console.log(`Valores de ${product.name} de acordo com a promoção:`)
+            decoration()
+            console.log(product.promotions)
+            decoration()
+        });
     } 
     const isTripleLook = new Set(categories).size == 3;
     if(isTripleLook) {
-        console.log('triple look');
+        decoration()
+        console.log('Sua promoção é a TRIPLE LOOK.')
+        decoration()
+        nProducts.forEach(product => {
+            console.log(`Valores de ${product.name} de acordo com a promoção:`)
+            decoration()
+            console.log(product.promotions)
+            decoration()
+        });
     } 
 
     const isFullLook = new Set(categories).size == 4;
     if(isFullLook) {
-        console.log('full look');
+        decoration()
+        console.log('Sua promoção é a FULL LOOK.')
+        decoration()
+        nProducts.forEach(product => {
+            console.log(`Valores de ${product.name} de acordo com a promoção:`)
+            decoration()
+            console.log(product.promotions)
+            decoration()
+        });
     }
 }
 
