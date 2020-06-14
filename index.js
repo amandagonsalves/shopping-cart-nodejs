@@ -90,10 +90,15 @@ function promotionsLook() {
         decoration()
         nProducts.forEach(product => {
             console.log(`Valor de ${product.name} sem promoção: ${product.regularPrice}`)
+            
             console.log(`Valor de ${product.name} de acordo com a promoção aplicada:`)
+
             decoration()
-            console.log(product.promotions[0].looks["SINGLE LOOK"])
+
+            console.log(product.promotions[0].looks.indexOf("SINGLE LOOK"))
+
             console.log(product.promotions[0].price)
+
             decoration()
         });
 
