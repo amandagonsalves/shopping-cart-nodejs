@@ -83,7 +83,8 @@ function promotionsLook() {
         console.log('Sua promoção é a SINGLE LOOK.')
         decoration()
         nProducts.forEach(product => {
-            console.log(`Valores de ${product.name} de acordo com a promoção:`)
+            console.log(`Valor de ${product.name} sem promoção: ${product.regularPrice}`)
+            console.log(`Valores de ${product.name} de acordo com as promoções:`)
             decoration()
             console.log(product.promotions)
             decoration()
@@ -96,7 +97,8 @@ function promotionsLook() {
         console.log('Sua promoção é a DOUBLE LOOK.')
         decoration()
         nProducts.forEach(product => {
-            console.log(`Valores de ${product.name} de acordo com a promoção:`)
+            console.log(`Valor de ${product.name} sem promoção: ${product.regularPrice}`)
+            console.log(`Valores de ${product.name} de acordo com as promoções:`)
             decoration()
             console.log(product.promotions)
             decoration()
@@ -108,7 +110,7 @@ function promotionsLook() {
         console.log('Sua promoção é a TRIPLE LOOK.')
         decoration()
         nProducts.forEach(product => {
-            console.log(`Valores de ${product.name} de acordo com a promoção:`)
+            console.log(`Valores de ${product.name} de acordo com as promoções:`)
             decoration()
             console.log(product.promotions)
             decoration()
@@ -121,7 +123,7 @@ function promotionsLook() {
         console.log('Sua promoção é a FULL LOOK.')
         decoration()
         nProducts.forEach(product => {
-            console.log(`Valores de ${product.name} de acordo com a promoção:`)
+            console.log(`Valores de ${product.name} de acordo com as promoções:`)
             decoration()
             console.log(product.promotions)
             decoration()
