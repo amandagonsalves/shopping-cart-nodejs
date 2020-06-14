@@ -79,14 +79,21 @@ function promotionsLook() {
 
     const isSingleLook = new Set(categories).size == 1;
     if(isSingleLook) { 
+        nProducts.filter(promotion => {
+            if(promotion.looks === promotion) {
+                return promotions.looks[0]
+            }
+            
+        })
         decoration()
         console.log('Sua promoção é a SINGLE LOOK.')
         decoration()
         nProducts.forEach(product => {
             console.log(`Valor de ${product.name} sem promoção: ${product.regularPrice}`)
-            console.log(`Valores de ${product.name} de acordo com as promoções:`)
+            console.log(`Valores de ${product.name} de acordo com a promoção aplicada:`)
             decoration()
-            console.log(product.promotions)
+            console.log(product.promotions[0].looks[0])
+            console.log(product.promotions[0].price)
             decoration()
         });
 
@@ -99,7 +106,7 @@ function promotionsLook() {
         decoration()
         nProducts.forEach(product => {
             console.log(`Valor de ${product.name} sem promoção: ${product.regularPrice}`)
-            console.log(`Valores de ${product.name} de acordo com as promoções:`)
+            console.log(`Valores de ${product.name} de acordo com a promoção aplicada:`)
             decoration()
             console.log(product.promotions)
             decoration()
@@ -111,7 +118,7 @@ function promotionsLook() {
         console.log('Sua promoção é a TRIPLE LOOK.')
         decoration()
         nProducts.forEach(product => {
-            console.log(`Valores de ${product.name} de acordo com as promoções:`)
+            console.log(`Valores de ${product.name} de acordo com a promoção aplicada:`)
             decoration()
             console.log(product.promotions)
             decoration()
@@ -124,7 +131,7 @@ function promotionsLook() {
         console.log('Sua promoção é a FULL LOOK.')
         decoration()
         nProducts.forEach(product => {
-            console.log(`Valores de ${product.name} de acordo com as promoções:`)
+            console.log(`Valores de ${product.name} de acordo com a promoção aplicada:`)
             decoration()
             console.log(product.promotions)
             decoration()
