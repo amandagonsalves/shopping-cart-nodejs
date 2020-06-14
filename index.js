@@ -79,10 +79,12 @@ function promotionsLook() {
 
     const isSingleLook = new Set(categories).size == 1;
     if(isSingleLook) { 
+        console.log('Sua promoção é a SINGLE LOOK.')
+        nProducts.forEach(product => {
+            console.log(product.promotions)
+        });
         
-        nProducts.filter(promotion => {
-            
-        }) 
+
     }
 
     const isDoubleLook = new Set(categories).size == 2;
