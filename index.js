@@ -78,22 +78,24 @@ function promotionsLook() {
     //vai retornar os produtos selecionados e suas respectivas categorias
 
     const isSingleLook = new Set(categories).size == 1;
-    if(isSingleLook === true) { 
-        nProducts.filter(promotion => promotion.looks === 'SINGLE LOOK')
-        console.log('single look');
+    if(isSingleLook) { 
+        
+        nProducts.filter(promotion => {
+            
+        }) 
     }
 
     const isDoubleLook = new Set(categories).size == 2;
-    if(isDoubleLook === true) {
+    if(isDoubleLook) {
         console.log('double look');
     } 
     const isTripleLook = new Set(categories).size == 3;
-    if(isTripleLook === true) {
+    if(isTripleLook) {
         console.log('triple look');
     } 
 
     const isFullLook = new Set(categories).size == 4;
-    if(isFullLook === true) {
+    if(isFullLook) {
         console.log('full look');
     }
 }
@@ -146,6 +148,6 @@ let option;
 while (option != "6") {
     options();
     option = prompt('Sua opção: ');
-    const resultado = optionSelected(option);
-    console.log(resultado)
+    const result = optionSelected(option);
+    console.log(result)
 }
