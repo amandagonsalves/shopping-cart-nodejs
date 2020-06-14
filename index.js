@@ -76,13 +76,37 @@ function promotionsLook() {
     });
     console.log({selected,categories});
     //vai retornar os produtos selecionados e suas respectivas categorias
-    const isCartSingleLook = new Set(categories).size == 1;
-    if(isCartSingleLook === true) {
+    const isSingleLook = new Set(categories).size == 1;
+    if(isSingleLook === true) {
         console.log('sao da mesma categoria');
     } else {
         console.log('nao sao da mesma categoria');
     }
-    console.log(isCartSingleLook);
+    console.log(isSingleLook);
+
+    const isDoubleLook = new Set(categories).size == 2;
+    if(isDoubleLook === true) {
+        console.log('double look');
+    } else {
+        console.log('is not double look');
+    }
+    console.log(isDoubleLook);
+
+    const isTripleLook = new Set(categories).size == 3;
+    if(isTripleLook === true) {
+        console.log('triple look');
+    } else {
+        console.log('is not triple look');
+    }
+    console.log(isTripleLook);
+
+    const isFullLook = new Set(categories).size == 4;
+    if(isFullLook === true) {
+        console.log('full look');
+    } else {
+        console.log('is not full look');
+    }
+    console.log(isFullLook);
 }
 
 function optionSelected(option) {
