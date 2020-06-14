@@ -78,11 +78,8 @@ function promotionsLook() {
     //vai retornar os produtos selecionados e suas respectivas categorias
 
     const isSingleLook = new Set(categories).size == 1;
-    if(isSingleLook === true) {
-        nProducts.filter(promotion => {
-            promotion.look === promotions
-            return nProducts.promotions
-        })
+    if(isSingleLook === true) { 
+        nProducts.filter(promotion => promotion.looks === 'SINGLE LOOK')
         console.log('single look');
     }
 
