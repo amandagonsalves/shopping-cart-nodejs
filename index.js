@@ -97,19 +97,21 @@ function promotionsLook() {
 
             decoration()
 
-            let mapProduct = product.promotions.map(look => {
+            product.promotions.map(promotion => {
                 
-                for(let i=0; i <= product.promotions.length; i++){
+                for(let i=0; i < product.promotions.length; i++){
                     
                     if(product.promotions[i].looks[i] === 'SINGLE LOOK') {
 
                         console.log(product.promotions[i].looks[i], product.promotions[i].price)
+                        decoration()
+
                     }
+                    //let pricePromotion = product.promotions[i].price
+                    //console.log(price.push(pricePromotion.value))
                 }
                 
             })
-
-            console.log(mapProduct)
 
             //console.log(product.promotions.indexOf("SINGLE LOOK"))
 
