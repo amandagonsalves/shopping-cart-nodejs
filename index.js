@@ -104,11 +104,9 @@ function promotionsLook() {
                     if(product.promotions[i].looks[i] === 'SINGLE LOOK') {
 
                         this.singleLook = product.promotions[i].looks[i];
-                        this.priceSingle =product.promotions[i].price
+                        this.priceSingle = product.promotions[i].price
 
                     }
-                    //let pricePromotion = product.promotions[i].price
-                    //console.log(price.push(pricePromotion.value))
                 }
                 
             })
@@ -125,9 +123,25 @@ function promotionsLook() {
         decoration()
         nProducts.forEach(product => {
             console.log(`Valor de ${product.name} sem promoção: ${product.regularPrice}`)
+            
             console.log(`Valor de ${product.name} de acordo com a promoção aplicada:`)
+
             decoration()
-            console.log(product.promotions)
+
+            product.promotions.map(promotion => {
+                
+                for(let i=0; i < product.promotions.length; i++){
+                    
+                    if(product.promotions[i].looks[i] === 'DOUBLE LOOK') {
+
+                        this.doubleLook = product.promotions[i].looks[i];
+                        this.priceDouble = product.promotions[i].price
+
+                    }
+                }
+                
+            })
+            console.log(this.doubleLook, this.priceDouble)
             decoration()
         });
     } 
@@ -137,9 +151,26 @@ function promotionsLook() {
         console.log('Sua promoção é a TRIPLE LOOK.')
         decoration()
         nProducts.forEach(product => {
+            console.log(`Valor de ${product.name} sem promoção: ${product.regularPrice}`)
+            
             console.log(`Valor de ${product.name} de acordo com a promoção aplicada:`)
+
             decoration()
-            console.log(product.promotions)
+
+            product.promotions.map(promotion => {
+                
+                for(let i=0; i < product.promotions.length; i++){
+                    
+                    if(product.promotions[i].looks[i] === 'TRIPLE LOOK') {
+
+                        this.singleLook = product.promotions[i].looks[i];
+                        this.priceSingle = product.promotions[i].price
+
+                    }
+                }
+                
+            })
+            console.log(this.singleLook, this.priceSingle)
             decoration()
         });
     } 
@@ -150,9 +181,26 @@ function promotionsLook() {
         console.log('Sua promoção é a FULL LOOK.')
         decoration()
         nProducts.forEach(product => {
+            console.log(`Valor de ${product.name} sem promoção: ${product.regularPrice}`)
+            
             console.log(`Valor de ${product.name} de acordo com a promoção aplicada:`)
+
             decoration()
-            console.log(product.promotions)
+
+            product.promotions.map(promotion => {
+                
+                for(let i=0; i < product.promotions.length; i++){
+                    
+                    if(product.promotions[i].looks[i] === 'FULL LOOK') {
+
+                        this.singleLook = product.promotions[i].looks[i];
+                        this.priceSingle = product.promotions[i].price
+
+                    }
+                }
+                
+            })
+            console.log(this.singleLook, this.priceSingle)
             decoration()
         });
     }
