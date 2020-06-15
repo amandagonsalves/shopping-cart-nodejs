@@ -78,6 +78,8 @@ function promotionsLook() {
     //vai retornar os produtos selecionados e suas respectivas categorias
 
     const isSingleLook = new Set(categories).size == 1;
+    let price = []
+    
     if(isSingleLook) { 
         nProducts.filter(promotion => {
             if(promotion.looks === promotion) {
@@ -95,13 +97,31 @@ function promotionsLook() {
 
             decoration()
 
-            console.log(product.promotions[0].looks.indexOf("SINGLE LOOK"))
+            let mapProduct = product.promotions.map(look => {
+                
+                for(let i=0; i <= product.promotions.length; i++){
+                    
+                    if(product.promotions[i].looks[i] === 'SINGLE LOOK') {
+
+                        console.log(product.promotions[i].looks[i], product.promotions[i].price)
+                    }
+                }
+                
+            })
+
+            console.log(mapProduct)
+
+            //console.log(product.promotions.indexOf("SINGLE LOOK"))
+
+            let pricePromotion = product.promotions[0].price
 
             console.log(product.promotions[0].price)
 
+            console.log(price.push(pricePromotion.value));
+            
+
             decoration()
         });
-
     }
 
     const isDoubleLook = new Set(categories).size == 2;
