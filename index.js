@@ -113,11 +113,11 @@ function promotionsLook() {
 
             //console.log(product.promotions.indexOf("SINGLE LOOK"))
 
-            let pricePromotion = product.promotions[0].price
+            //let pricePromotion = product.promotions[0].price
 
-            console.log(product.promotions[0].price)
+            //console.log(product.promotions[0].price)
 
-            console.log(price.push(pricePromotion.value));
+            //console.log(price.push(pricePromotion.value));
             
 
             decoration()
