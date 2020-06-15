@@ -103,8 +103,8 @@ function promotionsLook() {
                     
                     if(product.promotions[i].looks[i] === 'SINGLE LOOK') {
 
-                        console.log(product.promotions[i].looks[i], product.promotions[i].price)
-                        decoration()
+                        this.singleLook = product.promotions[i].looks[i];
+                        this.priceSingle =product.promotions[i].price
 
                     }
                     //let pricePromotion = product.promotions[i].price
@@ -112,18 +112,10 @@ function promotionsLook() {
                 }
                 
             })
-
-            //console.log(product.promotions.indexOf("SINGLE LOOK"))
-
-            //let pricePromotion = product.promotions[0].price
-
-            //console.log(product.promotions[0].price)
-
-            //console.log(price.push(pricePromotion.value));
-            
-
+            console.log(this.singleLook, this.priceSingle)
             decoration()
         });
+        
     }
 
     const isDoubleLook = new Set(categories).size == 2;
