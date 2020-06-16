@@ -85,22 +85,14 @@ function promotionsLook() {
         console.log('Sua promoção é a SINGLE LOOK.')
         decoration()
 
-        const toObj = products => {
-            
-            return JSON.parse(products)
-        } 
-        console.log(toObj)
+
         nProducts.forEach(product => {
 
-            console.log(`Valor de ${product.name} sem promoção: ${product.regularPrice}`)
+            console.log(`Valor de ${product.name} sem promoção: ${product.regularPrice}`);
             
-            console.log(`Valor de ${product.name} de acordo com a promoção aplicada:`)
-            const justPromotions = products => products.promotions
-            console.log(justPromotions)
+            console.log(`Valor de ${product.name} de acordo com a promoção aplicada: ${product.promotions}`);
         });
         
-        const justSingleLook = promotions => promotions.looks === 'SINGLE LOOK'
-        console.log(justSingleLook)
 
         /* const result = nProducts.filter(justPromotions).reduce(justSingleLook,[])
         console.log(result) */
