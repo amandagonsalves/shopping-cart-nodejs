@@ -85,11 +85,20 @@ function promotionsLook() {
         console.log('Sua promoção é a SINGLE LOOK.')
         decoration()
         nProducts.forEach(product => {
+
             console.log(`Valor de ${product.name} sem promoção: ${product.regularPrice}`)
             
             console.log(`Valor de ${product.name} de acordo com a promoção aplicada:`)
 
-            product.promotions.map(promotion => {
+        });
+        
+        const justPromotions = promotions => nProducts.promotions;
+        console.log(justPromotions);
+        const justSingleLook = promotion => promotion.looks === 'SINGLE LOOK'
+        console.log(justSingleLook)
+        nProducts.map(justPromotions).reduce(justSingleLook)
+
+            /* product.promotions.map(promotion => {
                 
                 for(let i=0; i < product.promotions.length; i++){
                     
@@ -98,13 +107,13 @@ function promotionsLook() {
                         this.singleLook = product.promotions[i].looks[i];
                         this.priceSingle = product.promotions[i].price
 
-                    }
-                }
+                    } 
+                } 
                 
             })
             console.log(singleLook, this.priceSingle)
-            decoration()
-        });
+            decoration() */
+        
         
     }
 
