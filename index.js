@@ -81,12 +81,6 @@ function promotionsLook() {
     let price = []
     
     if(isSingleLook) { 
-        nProducts.filter(promotion => {
-            if(promotion.looks === promotion) {
-                return promotions.looks[0]
-            }
-            
-        })
         decoration()
         console.log('Sua promoção é a SINGLE LOOK.')
         decoration()
@@ -94,8 +88,6 @@ function promotionsLook() {
             console.log(`Valor de ${product.name} sem promoção: ${product.regularPrice}`)
             
             console.log(`Valor de ${product.name} de acordo com a promoção aplicada:`)
-
-            decoration()
 
             product.promotions.map(promotion => {
                 
@@ -110,7 +102,7 @@ function promotionsLook() {
                 }
                 
             })
-            console.log(this.singleLook, this.priceSingle)
+            console.log(singleLook, this.priceSingle)
             decoration()
         });
         
@@ -163,14 +155,14 @@ function promotionsLook() {
                     
                     if(product.promotions[i].looks[i] === 'TRIPLE LOOK') {
 
-                        this.singleLook = product.promotions[i].looks[i];
-                        this.priceSingle = product.promotions[i].price
+                        this.tripleLook = product.promotions[i].looks[i];
+                        this.priceTriple = product.promotions[i].price
 
                     }
                 }
                 
             })
-            console.log(this.singleLook, this.priceSingle)
+            console.log(this.tripleLook, this.priceTriple)
             decoration()
         });
     } 
@@ -193,14 +185,14 @@ function promotionsLook() {
                     
                     if(product.promotions[i].looks[i] === 'FULL LOOK') {
 
-                        this.singleLook = product.promotions[i].looks[i];
-                        this.priceSingle = product.promotions[i].price
+                        this.fullLook = product.promotions[i].looks[i];
+                        this.priceFull = product.promotions[i].price
 
                     }
                 }
                 
             })
-            console.log(this.singleLook, this.priceSingle)
+            console.log(this.fullLook, this.priceFull)
             decoration()
         });
     }
