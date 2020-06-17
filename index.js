@@ -72,24 +72,24 @@ function promotionsLook() {
         return data;
     },{
         selected: [],
-        categories:[]
+        categories:[],
     });
     //console.log({selected,categories});
     //vai retornar os produtos selecionados e suas respectivas categorias
 
-    nProducts.forEach(product => {
+    /* nProducts.forEach(product => {
         console.log(`Valor de ${product.name} sem promoção: ${product.regularPrice}`);
 
         console.log(`Valor de ${product.name} de acordo com a promoção aplicada:`);
 
         console.log(product.promotions);
     });
-    
+     */
     const isSingleLook = new Set(categories).size == 1;
     let price = []
     
     
-    if(isSingleLook) { 
+    /* if(isSingleLook) { 
         decoration()
         console.log('Sua promoção é a SINGLE LOOK.')
         decoration()
@@ -98,7 +98,7 @@ function promotionsLook() {
             
         }
         promo()
-    }
+    } */
 
 }  
 
