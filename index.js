@@ -77,12 +77,34 @@ function promotionsLook() {
     //console.log({selected,categories});
     //vai retornar os produtos selecionados e suas respectivas categorias
     const isSingleLook = new Set(categories).size == 1;
-    /* nProducts.forEach(product => {
-        console.log(`Valor de ${product.name} sem promoção: ${product.regularPrice}`);
-        console.log(`Valor de ${product.name} de acordo com a promoção aplicada:`);
-        console.log(product.promotions);
-    });
-     */
+    if(isSingleLook) {
+        decoration()
+        console.log('Sua promoção é a SINGLE LOOK.')
+        decoration()
+        nProducts.forEach(product => {
+            console.log(`Valor de ${product.name} sem promoção: ${product.regularPrice}`)
+            
+            console.log(`Valor de ${product.name} de acordo com a promoção aplicada:`)
+     
+            decoration()
+     
+            product.promotions.map(promotion => {
+                
+                for(let i=0; i < product.promotions.length; i++){
+                    
+                    if(product.promotions[i].looks[i] === 'SINGLE LOOK') {
+     
+                        this.singleLook = product.promotions[i].looks[i];
+                        this.priceSingle = product.promotions[i].price
+     
+                    }
+                }
+                
+            })
+            console.log(this.singleLook, this.priceSingle)
+            decoration() 
+        });
+     } 
     const isDoubleLook = new Set(categories).size == 2;
     if(isDoubleLook) {
        decoration()
