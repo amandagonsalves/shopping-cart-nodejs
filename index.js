@@ -77,45 +77,27 @@ function promotionsLook() {
     //console.log({selected,categories});
     //vai retornar os produtos selecionados e suas respectivas categorias
 
+    nProducts.forEach(product => {
+        console.log(`Valor de ${product.name} sem promoção: ${product.regularPrice}`);
+
+        console.log(`Valor de ${product.name} de acordo com a promoção aplicada:`);
+
+        console.log(product.promotions);
+    });
+    
     const isSingleLook = new Set(categories).size == 1;
     let price = []
     
     
-     if(isSingleLook) { 
+    if(isSingleLook) { 
         decoration()
         console.log('Sua promoção é a SINGLE LOOK.')
         decoration()
-        
-        nProducts.forEach(product => {
-            console.log(`Valor de ${product.name} sem promoção: ${product.regularPrice}`);
-
-            console.log(`Valor de ${product.name} de acordo com a promoção aplicada: ${product.promotions}`);
+        function promo() {
+            return nProducts.map(product => product.promotions).reduce(product => product.price);
             
-        });
-
-
-        const justPromotions = product => product.promotions;
-        console.log(justPromotions)
-
-
-
-            /* product.promotions.map(promotion => {
-                
-                for(let i=0; i < product.promotions.length; i++){
-                    
-                    if(product.promotions[i].looks[i] === 'SINGLE LOOK') {
-
-                        this.singleLook = product.promotions[i].looks[i];
-                        this.priceSingle = product.promotions[i].price
-
-                    } 
-                } 
-                
-            })
-            console.log(singleLook, this.priceSingle)
-            decoration()
-         */
-        
+        }
+        promo()
     }
 
     const isDoubleLook = new Set(categories).size == 2;
@@ -206,7 +188,7 @@ function promotionsLook() {
             decoration() 
         }); 
     }
-} 
+}  
 
 function optionSelected(option) {
     nProducts = []
