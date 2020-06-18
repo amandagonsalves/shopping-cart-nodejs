@@ -84,7 +84,6 @@ function promotionsLook() {
         nProducts.forEach(product => {
 
             console.log(`Valor de ${product.name} sem promoção: ${product.regularPrice}`);
-            decoration();
 
             product.promotions.map(promotion => {
 
@@ -109,7 +108,6 @@ function promotionsLook() {
         decoration()
         nProducts.forEach(product => {
             console.log(`Valor de ${product.name} sem promoção: ${product.regularPrice}`)
-            decoration()
 
             product.promotions.map(promotion => {
 
@@ -134,12 +132,11 @@ function promotionsLook() {
         decoration()
         nProducts.forEach(product => {
             console.log(`Valor de ${product.name} sem promoção: ${product.regularPrice}`)
-            decoration()
 
             product.promotions.map(promotion => {
 
                 for (let c = 0; c < product.promotions.length; c++) {
-                    for (let d = 0; c < product.promotions[c].looks.length; d++) {
+                    for (let d = 0; d < product.promotions[c].looks.length; d++) {
                         if (product.promotions[c].looks[d] === 'TRIPLE LOOK') {
                             this.tripleLook = product.promotions[c].looks[d];
                             this.priceTriple = product.promotions[c].price
@@ -161,26 +158,19 @@ function promotionsLook() {
         nProducts.forEach(product => {
             console.log(`Valor de ${product.name} sem promoção: ${product.regularPrice}`)
 
-            console.log(`Valor de ${product.name} de acordo com a promoção aplicada: ${product.promotions}`)
-
-            decoration()
-
             product.promotions.map(promotion => {
 
-                for (let i = 0; i < product.promotions.length; i++) {
-                    for (let j = 0; j < product.promotions[i].looks.length; j++) {
-                        if (product.promotions[i].looks[j] === 'FULL LOOK') {
-
-                            this.singleLook = product.promotions[i].looks[j];
-                            this.priceSingle = product.promotions[i].price
-
+                for (let e = 0; e < product.promotions.length; e++) {
+                    for (let f = 0; f < product.promotions[e].looks.length; f++) {
+                        if (product.promotions[e].looks[f] === 'FULL LOOK') {
+                            this.fullLook = product.promotions[e].looks[f];
+                            this.priceFull = product.promotions[e].price
                         }
                     }
-
                 }
 
             })
-            console.log(this.fullLook, this.priceFull)
+            console.log(`Valor de ${product.name} de acordo com a promoção aplicada: ${this.fullLook} ${this.priceFull}`)
             decoration()
         });
     }
