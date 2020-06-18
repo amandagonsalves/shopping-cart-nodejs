@@ -206,7 +206,7 @@ function optionSelected(option) {
 
     } else if (option == '2') {
 
-        //add product and calculate total price
+        //add product and calculate the total price
         addProducts();
         promotionsLook();
 
