@@ -78,26 +78,28 @@ function promotionsLook() {
     //vai retornar os produtos selecionados e suas respectivas categorias
     const isSingleLook = new Set(categories).size == 1;
     if(isSingleLook) {
-        decoration()
-        console.log('Sua promoção é a SINGLE LOOK.')
-        decoration()
+        decoration();
+        console.log('Sua promoção é a SINGLE LOOK.');
+        decoration();
         nProducts.forEach(product => {
-            console.log(`Valor de ${product.name} sem promoção: ${product.regularPrice}`)
+            console.log(`Valor de ${product.name} sem promoção: ${product.regularPrice}`);
             
-            console.log(`Valor de ${product.name} de acordo com a promoção aplicada:`)
+            console.log(`Valor de ${product.name} de acordo com a promoção aplicada:`);
      
-            decoration()
+            decoration();
      
             product.promotions.map(promotion => {
                 
                 for(let i=0; i < product.promotions.length; i++){
-                    
-                    if(product.promotions[i].looks[i] === 'SINGLE LOOK') {
+                    for(let j=0; j < product.promotions[i].looks.length; j++) {
+                        if(product.promotions[i].looks[j] === 'SINGLE LOOK') {
      
-                        this.singleLook = product.promotions[i].looks[i];
-                        this.priceSingle = product.promotions[i].price
-     
+                            this.singleLook = product.promotions[i].looks[j];
+                            this.priceSingle = product.promotions[i].price
+         
+                        }
                     }
+                    
                 }
                 
             })
@@ -119,15 +121,17 @@ function promotionsLook() {
     
            product.promotions.map(promotion => {
                
-               for(let i=0; i < product.promotions.length; i++){
-                   
-                   if(product.promotions[i].looks[i] === 'DOUBLE LOOK') {
-    
-                       this.doubleLook = product.promotions[i].looks[i];
-                       this.priceDouble = product.promotions[i].price
-    
-                   }
-               }
+            for(let i=0; i < product.promotions.length; i++){
+                for(let j=0; j < product.promotions[i].looks.length; j++) {
+                    if(product.promotions[i].looks[j] === 'DOUBLE LOOK') {
+ 
+                        this.singleLook = product.promotions[i].looks[j];
+                        this.priceSingle = product.promotions[i].price
+     
+                    }
+                }
+                
+            }
                
            })
            console.log(this.doubleLook, this.priceDouble)
@@ -148,15 +152,17 @@ function promotionsLook() {
     
            product.promotions.map(promotion => {
                
-               for(let i=0; i < product.promotions.length; i++){
-                   
-                   if(product.promotions[i].looks[i] === 'TRIPLE LOOK') {
-    
-                       this.tripleLook = product.promotions[i].looks[i];
-                       this.priceTriple = product.promotions[i].price
-    
-                   }
-               }
+            for(let i=0; i < product.promotions.length; i++){
+                for(let j=0; j < product.promotions[i].looks.length; j++) {
+                    if(product.promotions[i].looks[j] === 'TRIPLE LOOK') {
+ 
+                        this.singleLook = product.promotions[i].looks[j];
+                        this.priceSingle = product.promotions[i].price
+     
+                    }
+                }
+                
+            }
                
            })
            console.log(this.tripleLook, this.priceTriple)
@@ -178,15 +184,17 @@ function promotionsLook() {
     
             product.promotions.map(promotion => {
                
-               for(let i=0; i < product.promotions.length; i++){
-                   
-                   if(product.promotions[i].looks[i] === 'FULL LOOK') {
-    
-                       this.fullLook = product.promotions[i].looks[i];
-                       this.priceFull = product.promotions[i].price
-    
-                   }
-               }
+                for(let i=0; i < product.promotions.length; i++){
+                    for(let j=0; j < product.promotions[i].looks.length; j++) {
+                        if(product.promotions[i].looks[j] === 'FULL LOOK') {
+     
+                            this.singleLook = product.promotions[i].looks[j];
+                            this.priceSingle = product.promotions[i].price
+         
+                        }
+                    }
+                    
+                }
                
            })
            console.log(this.fullLook, this.priceFull)
