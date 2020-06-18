@@ -1,4 +1,4 @@
-const {products} = require('./data/products.json');
+const { products } = require('./data/products.json');
 const prompt = require('prompt-sync')();
 
 function options() {
@@ -19,17 +19,17 @@ function decoration() {
 }
 
 function buyProducts() {
-    
+
     var addProduct = prompt('Digite o nome do produto: ').toUpperCase();
-    
+
     return products.filter((product) => {
-        if(product.name === addProduct){
+        if (product.name === addProduct) {
             decoration()
             console.log(product);
             decoration()
             let res = prompt(`Adicionar ${addProduct} ao carrinho? [ y/n ] `);
             decoration()
-            if(res==='y') {
+            if (res === 'y') {
                 nProducts.push(product);
                 console.log('Produto adicionado ao carrinho.');
                 decoration()
@@ -46,10 +46,10 @@ function buyProducts() {
             } else {
                 console.log('Concluído.')
             }
-        } 
+        }
     })
-    
-} 
+
+}
 
 function promotionsLook() {
     console.log(`
@@ -62,151 +62,134 @@ function promotionsLook() {
             FULL LOOK: Pelo menos 4 produtos da mesma categoria
         ======================================================================
     `)
-    const {selected,categories} =
-    nProducts.reduce((data,{id}) => {
-        const productN = products.find(({id: productId}) => productId === id);
-        if(productN) {
-            data.categories.push(productN.category);
-            data.selected.push(productN);
-        }
-        return data;
-    },{
-        selected: [],
-        categories:[],
-    });
+    const { selected, categories } =
+        nProducts.reduce((data, { id }) => {
+            const productN = products.find(({ id: productId }) => productId === id);
+            if (productN) {
+                data.categories.push(productN.category);
+                data.selected.push(productN);
+            }
+            return data;
+        }, {
+            selected: [],
+            categories: [],
+        });
     //console.log({selected,categories});
     //vai retornar os produtos selecionados e suas respectivas categorias
     const isSingleLook = new Set(categories).size == 1;
-    if(isSingleLook) {
+    if (isSingleLook) {
         decoration();
         console.log('Sua promoção é a SINGLE LOOK.');
         decoration();
         nProducts.forEach(product => {
+
             console.log(`Valor de ${product.name} sem promoção: ${product.regularPrice}`);
-            
-            console.log(`Valor de ${product.name} de acordo com a promoção aplicada:`);
-     
             decoration();
-     
+
             product.promotions.map(promotion => {
-                
-                for(let i=0; i < product.promotions.length; i++){
-                    for(let j=0; j < product.promotions[i].looks.length; j++) {
-                        if(product.promotions[i].looks[j] === 'SINGLE LOOK') {
-     
+
+                for (let i = 0; i < product.promotions.length; i++) {
+                    for (let j = 0; j < product.promotions[i].looks.length; j++) {
+                        if (product.promotions[i].looks[j] === 'SINGLE LOOK') {
                             this.singleLook = product.promotions[i].looks[j];
                             this.priceSingle = product.promotions[i].price
-         
                         }
                     }
-                    
                 }
-                
+
             })
-            console.log(this.singleLook, this.priceSingle)
-            decoration() 
+            console.log(`Valor de ${product.name} de acordo com a promoção aplicada: ${this.singleLook} ${this.priceSingle}`);
+            decoration()
         });
-     } 
+    }
     const isDoubleLook = new Set(categories).size == 2;
-    if(isDoubleLook) {
-       decoration()
-       console.log('Sua promoção é a DOUBLE LOOK.')
-       decoration()
-       nProducts.forEach(product => {
-           console.log(`Valor de ${product.name} sem promoção: ${product.regularPrice}`)
-           
-           console.log(`Valor de ${product.name} de acordo com a promoção aplicada: ${product.promotions}`)
-    
-           decoration()
-    
-           product.promotions.map(promotion => {
-               
-            for(let i=0; i < product.promotions.length; i++){
-                for(let j=0; j < product.promotions[i].looks.length; j++) {
-                    if(product.promotions[i].looks[j] === 'DOUBLE LOOK') {
- 
-                        this.singleLook = product.promotions[i].looks[j];
-                        this.priceSingle = product.promotions[i].price
-     
-                    }
-                }
-                
-            }
-               
-           })
-           console.log(this.doubleLook, this.priceDouble)
-           decoration() 
-       });
-    } 
-    const isTripleLook = new Set(categories).size == 3;
-    if(isTripleLook) {
-       decoration()
-       console.log('Sua promoção é a TRIPLE LOOK.')
-       decoration()
-       nProducts.forEach(product => {
-           console.log(`Valor de ${product.name} sem promoção: ${product.regularPrice}`)
-           
-           console.log(`Valor de ${product.name} de acordo com a promoção aplicada: ${product.promotions}`)
-    
-           decoration()
-    
-           product.promotions.map(promotion => {
-               
-            for(let i=0; i < product.promotions.length; i++){
-                for(let j=0; j < product.promotions[i].looks.length; j++) {
-                    if(product.promotions[i].looks[j] === 'TRIPLE LOOK') {
- 
-                        this.singleLook = product.promotions[i].looks[j];
-                        this.priceSingle = product.promotions[i].price
-     
-                    }
-                }
-                
-            }
-               
-           })
-           console.log(this.tripleLook, this.priceTriple)
-           decoration() 
-       });
-    } 
-    
-    const isFullLook = new Set(categories).size == 4;
-    if(isFullLook) {
-       decoration()
-       console.log('Sua promoção é a FULL LOOK.')
-       decoration()
-       nProducts.forEach(product => {
-           console.log(`Valor de ${product.name} sem promoção: ${product.regularPrice}`)
-           
-           console.log(`Valor de ${product.name} de acordo com a promoção aplicada: ${product.promotions}`)
-    
-           decoration()
-    
+    if (isDoubleLook) {
+        decoration()
+        console.log('Sua promoção é a DOUBLE LOOK.')
+        decoration()
+        nProducts.forEach(product => {
+            console.log(`Valor de ${product.name} sem promoção: ${product.regularPrice}`)
+            decoration()
+
             product.promotions.map(promotion => {
-               
-                for(let i=0; i < product.promotions.length; i++){
-                    for(let j=0; j < product.promotions[i].looks.length; j++) {
-                        if(product.promotions[i].looks[j] === 'FULL LOOK') {
-     
-                            this.singleLook = product.promotions[i].looks[j];
-                            this.priceSingle = product.promotions[i].price
-         
+
+                for (let a = 0; a < product.promotions.length; a++) {
+                    for (let b = 0; b < product.promotions[a].looks.length; b++) {
+                        if (product.promotions[a].looks[b] === 'DOUBLE LOOK') {
+                            this.doubleLook = product.promotions[a].looks[b];
+                            this.priceDouble = product.promotions[a].price
                         }
                     }
-                    
                 }
-               
-           })
-           console.log(this.fullLook, this.priceFull)
-           decoration() 
-       }); 
+
+            })
+            console.log(`Valor de ${product.name} de acordo com a promoção aplicada: ${this.doubleLook} ${this.priceDouble}`)
+            decoration()
+        });
     }
-}  
+    const isTripleLook = new Set(categories).size == 3;
+    if (isTripleLook) {
+        decoration()
+        console.log('Sua promoção é a TRIPLE LOOK.')
+        decoration()
+        nProducts.forEach(product => {
+            console.log(`Valor de ${product.name} sem promoção: ${product.regularPrice}`)
+            decoration()
+
+            product.promotions.map(promotion => {
+
+                for (let c = 0; c < product.promotions.length; c++) {
+                    for (let d = 0; c < product.promotions[c].looks.length; d++) {
+                        if (product.promotions[c].looks[d] === 'TRIPLE LOOK') {
+                            this.tripleLook = product.promotions[c].looks[d];
+                            this.priceTriple = product.promotions[c].price
+                        }
+                    }
+                }
+
+            })
+            console.log(`Valor de ${product.name} de acordo com a promoção aplicada: ${this.tripleLook} ${this.priceTriple}`)
+            decoration()
+        });
+    }
+
+    const isFullLook = new Set(categories).size == 4;
+    if (isFullLook) {
+        decoration()
+        console.log('Sua promoção é a FULL LOOK.')
+        decoration()
+        nProducts.forEach(product => {
+            console.log(`Valor de ${product.name} sem promoção: ${product.regularPrice}`)
+
+            console.log(`Valor de ${product.name} de acordo com a promoção aplicada: ${product.promotions}`)
+
+            decoration()
+
+            product.promotions.map(promotion => {
+
+                for (let i = 0; i < product.promotions.length; i++) {
+                    for (let j = 0; j < product.promotions[i].looks.length; j++) {
+                        if (product.promotions[i].looks[j] === 'FULL LOOK') {
+
+                            this.singleLook = product.promotions[i].looks[j];
+                            this.priceSingle = product.promotions[i].price
+
+                        }
+                    }
+
+                }
+
+            })
+            console.log(this.fullLook, this.priceFull)
+            decoration()
+        });
+    }
+}
 
 function optionSelected(option) {
     nProducts = []
-    
-    if(option=='1') {
+
+    if (option == '1') {
 
         //pesquisar produto e mostrar promoções
         decoration()
@@ -214,7 +197,7 @@ function optionSelected(option) {
         decoration()
 
         return products.filter((product) => {
-            if(product.name === searchProduct){
+            if (product.name === searchProduct) {
                 decoration()
                 console.log(product)
                 decoration()
@@ -226,7 +209,7 @@ function optionSelected(option) {
         //adicionar produto ao carrinho
         buyProducts()
         promotionsLook()
-        
+
     } else if (option == '3') {
 
         //calcular o valor total com desconto
@@ -244,7 +227,7 @@ function optionSelected(option) {
         console.log('Compra terminada.')
 
     }
-    
+
 }
 
 let option;
