@@ -181,7 +181,7 @@ function optionSelected(option) {
 
     if (option == '1') {
 
-        //pesquisar produto e mostrar promoções
+        //search product
         decoration()
         let searchProduct = prompt('Digite o nome do produto: ').toUpperCase();
         decoration()
@@ -196,7 +196,7 @@ function optionSelected(option) {
 
     } else if (option == '2') {
 
-        //adicionar produto ao carrinho
+        //add product and calculate total price
         buyProducts()
         promotionsLook()
 
