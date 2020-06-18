@@ -18,7 +18,7 @@ function decoration() {
     console.log('=====================================================');
 }
 
-function buyProducts() {
+function addProducts() {
 
     var addProduct = prompt('Digite o nome do produto: ').toUpperCase();
 
@@ -40,9 +40,9 @@ function buyProducts() {
             console.log('Por enquanto, assim está seu carrinho: ');
             console.log(nProducts)
             decoration()
-            let buy = prompt('Deseja adicionar novo item? [y/n] ');
-            if (buy === 'y') {
-                buyProducts()
+            let add = prompt('Deseja adicionar novo item? [y/n] ');
+            if (add === 'y') {
+                addProducts()
             } else {
                 console.log('Concluído.')
             }
@@ -75,7 +75,7 @@ function promotionsLook() {
             categories: [],
         });
     //console.log({selected,categories});
-    //vai retornar os produtos selecionados e suas respectivas categorias
+    let price = []
     const isSingleLook = new Set(categories).size == 1;
     if (isSingleLook) {
         decoration();
@@ -95,10 +95,12 @@ function promotionsLook() {
                         }
                     }
                 }
-
             })
+            
             console.log(`Valor de ${product.name} de acordo com a promoção aplicada: ${this.singleLook} ${this.priceSingle}`);
             decoration()
+            price.push(this.priceSingle)
+            console.log(`Valores no carrinho: ${price}`)
         });
     }
     const isDoubleLook = new Set(categories).size == 2;
@@ -123,6 +125,8 @@ function promotionsLook() {
             })
             console.log(`Valor de ${product.name} de acordo com a promoção aplicada: ${this.doubleLook} ${this.priceDouble}`)
             decoration()
+            price.push(this.priceDouble)
+            console.log(`Valores no carrinho: ${price}`)
         });
     }
     const isTripleLook = new Set(categories).size == 3;
@@ -147,6 +151,8 @@ function promotionsLook() {
             })
             console.log(`Valor de ${product.name} de acordo com a promoção aplicada: ${this.tripleLook} ${this.priceTriple}`)
             decoration()
+            price.push(this.priceTriple)
+            console.log(`Valores no carrinho: ${price}`)
         });
     }
 
@@ -172,6 +178,8 @@ function promotionsLook() {
             })
             console.log(`Valor de ${product.name} de acordo com a promoção aplicada: ${this.fullLook} ${this.priceFull}`)
             decoration()
+            price.push(this.priceFull)
+            console.log(`Valores no carrinho: ${price}`)
         });
     }
 }
@@ -197,7 +205,7 @@ function optionSelected(option) {
     } else if (option == '2') {
 
         //add product and calculate total price
-        buyProducts()
+        addProducts()
         promotionsLook()
 
     } else if (option == '3') {
