@@ -72,7 +72,7 @@ function promotionsLook() {
             categories: [],
         });
     //console.log({selected,categories});
-    let price = [];
+    let price= [];
     const isSingleLook = new Set(categories).size == 1;
     if (isSingleLook) {
         decoration();
@@ -97,10 +97,10 @@ function promotionsLook() {
             console.log(`Valor de ${product.name} de acordo com a promoção aplicada: ${this.singleLook} ${this.priceSingle}`);
             decoration();
             price.push(this.priceSingle);
-            let totalSingle = price.reduce(function(total, priceSingle){return total + priceSingle;}, 0);
-            console.log(`Valor total do carrinho: ${totalSingle}`);
-
+            
         });
+        let totalSingle = price.reduce(function(total, priceSingle){return total + priceSingle;}, 0);
+        console.log(`Valor total do carrinho: ${totalSingle}`);
     }
     const isDoubleLook = new Set(categories).size == 2;
     if (isDoubleLook) {
@@ -125,9 +125,9 @@ function promotionsLook() {
             console.log(`Valor de ${product.name} de acordo com a promoção aplicada: ${this.doubleLook} ${this.priceDouble}`);
             decoration();
             price.push(this.priceDouble);
-            let totalDouble = price.reduce(function(total, priceDouble){return total + priceDouble;}, 0);
-            console.log(`Valor total do carrinho: ${totalDouble}`);
         });
+        let totalDouble = price.reduce(function(total, priceDouble){return total + priceDouble;}, 0);
+        console.log(`Valor total do carrinho: ${totalDouble}`);
     }
     const isTripleLook = new Set(categories).size == 3;
     if (isTripleLook) {
@@ -152,9 +152,9 @@ function promotionsLook() {
             console.log(`Valor de ${product.name} de acordo com a promoção aplicada: ${this.tripleLook} ${this.priceTriple}`);
             decoration();
             price.push(this.priceTriple);
-            let totalTriple = price.reduce(function(total, priceTriple){return total + priceTriple;}, 0);
-            console.log(`Valor total do carrinho: ${totalTriple}`);
         });
+        let totalTriple = price.reduce(function(total, priceTriple){return total + priceTriple;}, 0);
+        console.log(`Valor total do carrinho: ${totalTriple}`);
     }
 
     const isFullLook = new Set(categories).size == 4;
@@ -180,9 +180,9 @@ function promotionsLook() {
             console.log(`Valor de ${product.name} de acordo com a promoção aplicada: ${this.fullLook} ${this.priceFull}`);
             decoration();
             price.push(this.priceFull);
-            let totalFull = price.reduce(function(total, priceFull){return total + priceFull;}, 0);
-            console.log(`Valor total do carrinho: ${totalFull}`);
         });
+        let totalFull = price.reduce(function(total, priceFull){return total + priceFull;}, 0);
+        console.log(`Valor total do carrinho: ${totalFull}`);
     }
 }
 
@@ -217,7 +217,7 @@ function optionSelected(option) {
 }
 
 let option;
-while (option != "6") {
+while (option != "3") {
     options();
     option = prompt('Sua opção: ');
     const result = optionSelected(option);
